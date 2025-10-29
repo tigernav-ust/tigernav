@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #ffffff;
+      --bg: #fafaf8;
       --panel: #fefaf6;
       --ink: #2a1810;
       --muted: #6b5846;
@@ -41,7 +41,7 @@
     
     header {
       position: sticky; top: 0; z-index: 40; backdrop-filter: blur(10px);
-      background: linear-gradient(to bottom, rgba(255,255,255,.95), rgba(255,255,255,.8) 60%, rgba(255,255,255,0));
+      background: linear-gradient(to bottom, rgba(250,250,248,.95), rgba(250,250,248,.8) 60%, rgba(250,250,248,0));
       border-bottom: 1px solid var(--border);
     }
     .nav { display:flex; align-items:center; justify-content:space-between; gap:16px; padding: 10px 24px; }
@@ -52,9 +52,11 @@
     .hero { padding: 56px 0 28px; }
     .pretitle { display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius: 999px; background: var(--chip); color: var(--muted); font-weight:600; font-size: 12px; letter-spacing:.08em; text-transform:uppercase; }
     h1 { margin: 14px 0 12px; font-size: clamp(28px, 4.2vw, 56px); line-height:1.05; letter-spacing:.01em; }
-    .subtitle { color: var(--muted); font-size: clamp(16px, 2vw, 20px); margin-top: 12px; }
-    .authors { margin: 18px 0 8px; display:flex; flex-wrap:wrap; gap:8px 14px; }
+    .subtitle { color: var(--muted); font-size: clamp(14px, 1.8vw, 17px); margin-top: 12px; }
+    .authors { margin: 18px 0 8px; display:flex; flex-wrap:wrap; gap:8px 14px; font-size: 17px; }
     .authors a, .authors span { color: var(--ink); }
+    .authors a { font-weight: 500; color: var(--brand); }
+    .authors a:hover { text-decoration: underline; }
     .affil { color: var(--muted); font-size: 15px; }
     .cta-row { margin: 20px 0 0; display:flex; flex-wrap:wrap; gap:12px; }
     .btn { display:inline-flex; align-items:center; gap:10px; font-weight:700; padding: 12px 18px; border-radius: 12px; border: 1px solid var(--border); text-decoration:none; transition: transform .05s ease; box-shadow: var(--shadow); }
@@ -67,7 +69,7 @@
     section.card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 32px; margin: 26px 0; box-shadow: var(--shadow); }
     section.card h2 { margin: 0 0 16px; font-size: clamp(22px, 2.8vw, 32px); color: #d97706; font-weight: 700; }
     section.card h3 { margin: 20px 0 8px; font-size: clamp(18px, 2vw, 22px); color: var(--ink); }
-    section.card p { margin: 12px 0; color: var(--muted); line-height: 1.7; }
+    section.card p { margin: 12px 0; color: var(--muted); line-height: 1.7; text-align: justify; }
     
     .video-container {
       position: relative;
@@ -157,7 +159,7 @@
         <span>•</span>
         <span>Carl Kristien P. Sumo</span>
         <span>•</span>
-        <a href="https://www.ust.edu.ph/profile/pangaliman-ma-madecheen-s/" target="_blank" rel="noopener" style="color: var(--ink); text-decoration: none;">Ma. Madecheen S. Pangaliman</a>
+        <a href="https://www.ust.edu.ph/profile/pangaliman-ma-madecheen-s/" target="_blank" rel="noopener">Ma. Madecheen S. Pangaliman</a>
       </div>
       <div class="affil">Department of Electronics Engineering, Faculty of Engineering, University of Santo Tomas</div>
       <div class="cta-row">
@@ -170,19 +172,7 @@
     <section id="abstract" class="card">
       <h2>📄 Abstract</h2>
       <p>
-        We present TigerNav, a dialogue-based indoor navigation system using a Large Language Model (LLM) 
-        to process diverse user inputs in complex indoor environments. Addressing limitations in existing 
-        navigation systems that struggle with unconventional and unstructured queries, TigerNav integrates 
-        Whisper speech-to-text and Coqui text-to-speech technologies with a fine-tuned GPT-2 model, enabling 
-        natural voice-based and text-based interaction for indoor navigation. Deployed specifically for the 
-        Fr. Roque Ruaño Building at the University of Santo Tomas Engineering campus, the system was trained 
-        on a custom dataset designed to handle real-world navigation scenarios with both formal and informal 
-        user queries. Due to hardware constraints, GPT-2 was selected as the base model, with multiple training 
-        methods evaluated including General Purpose Trainer and ORPO. TigerNav enables users to navigate through 
-        indoor spaces using natural language, supporting both voice and text modalities for flexible interaction. 
-        We conclude with performance benchmarks, user satisfaction analysis, and recommendations for improvements 
-        using more advanced LLMs to handle highly unstructured queries. The source code can be accessed via 
-        <a href="https://github.com/tigernav-ust/tigernav" target="_blank" rel="noopener">https://github.com/tigernav-ust/tigernav</a>.
+        We present TigerNav, a dialogue-based indoor navigation assistant that uses Large Language Models to provide interactive and speech-enabled directional guidance. Addressing challenges users faced with navigating complex indoor environments using conventional navigation systems, TigerNav integrates Whisper speech-to-text and Coqui text-to-speech technologies with a fine-tuned GPT-2 model, enabling natural voice-based and text-based interaction for indoor navigation. Deployed specifically for the Fr. Roque Ruaño Building at the University of Santo Tomas Engineering campus, the system was trained on a custom dataset designed to handle real-world navigation scenarios with both formal and informal user queries. The system supports both voice and text modalities for flexible interaction. We conclude with performance benchmarks, user satisfaction analysis, and recommendations for future enhancements. The source code can be accessed via <a href="https://github.com/tigernav-ust/tigernav" target="_blank" rel="noopener">https://github.com/tigernav-ust/tigernav</a>.
       </p>
     </section>
     <!-- Demo Video -->
@@ -320,19 +310,6 @@
           </tbody>
         </table>
       </div>
-      
-      <p>
-        The General Purpose Trainer achieved the best performance in <strong>Epoch 1</strong>, with a BERTScore of 
-        <strong>0.89</strong>, METEOR score of <strong>0.84</strong>, and an average perplexity of <strong>2.82</strong>. 
-        The system demonstrated strong performance in accuracy, reliability, and user expectations, with response time 
-        identified as the primary area for future optimization.
-      </p>
-      
-      <p>
-        A user satisfaction survey validated the system's practicality, achieving an overall rating of <strong>87.44%</strong>. 
-        The evaluation demonstrated strong performance across all metrics, with particularly high ratings in accuracy 
-        (91.2%) and reliability (92%).
-      </p>
     </section>
     <!-- BibTeX -->
     <section id="bibtex" class="card">
@@ -354,13 +331,11 @@
   note      = {Accepted}
 }</div>
     </section>
-    <!-- Acknowledgments -->
+    <!-- Acknowledgment -->
     <section class="card">
-      <h2>🙏 Acknowledgments</h2>
+      <h2>🙏 Acknowledgment</h2>
       <p>
-        This research was conducted at the Department of Electronics Engineering, Faculty of Engineering, 
-        University of Santo Tomas. We thank our institution for providing the resources and support that made 
-        this work possible.
+        The researchers would like to acknowledge the UST Faculty of Engineering, the UST Electronics Engineering Department, and the UST Senior High School Department for their support and guidance throughout the conduct of this study.
       </p>
     </section>
     <footer>
