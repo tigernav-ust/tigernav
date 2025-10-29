@@ -161,40 +161,32 @@
         <a class="btn ghost" href="#bibtex">📋 BibTeX</a>
       </div>
     </div>
-
     <!-- Abstract -->
     <section id="abstract" class="card">
       <h2>📄 Abstract</h2>
       <p>
-        Indoor navigation systems play a crucial role in guiding users through complex environments such as airports, 
-        shopping malls, hospitals, and university campuses. However, existing dialogue-based navigation systems face 
-        limitations in accurately processing diverse user inputs, particularly unconventional and unstructured queries. 
-        To address this, the researchers developed <strong>TigerNav</strong>, a virtual assistant using a Large Language 
-        Model (LLM) to facilitate dialogue-driven navigation for the Fr. Roque Ruaño Building at the University of Santo 
-        Tomas Engineering campus.
-      </p>
-      <p>
-        The system integrates Whisper speech-to-text and Coqui text-to-speech technologies with a fine-tuned GPT-2 model, 
-        trained on a dataset of <strong>200,000 entries</strong> (70% training, 30% testing). Due to hardware constraints 
-        (4GB VRAM GPUs), GPT-2 was selected as the base model. Among the training methods tested, the General Purpose 
-        Trainer achieved optimal performance with a <strong>BERTScore of 0.89</strong>, <strong>METEOR score of 0.84</strong>, 
-        and <strong>perplexity of 2.82</strong>. User satisfaction surveys validated the system's practicality with an 
-        average rating of <strong>87.44%</strong>, though improvements in handling highly unstructured queries could be 
-        achieved using more advanced LLMs.
+        We present TigerNav, a dialogue-based indoor navigation system using a Large Language Model (LLM) 
+        to process diverse user inputs in complex indoor environments. Addressing limitations in existing 
+        navigation systems that struggle with unconventional and unstructured queries, TigerNav integrates 
+        Whisper speech-to-text and Coqui text-to-speech technologies with a fine-tuned GPT-2 model, enabling 
+        natural voice-based and text-based interaction for indoor navigation. Deployed specifically for the 
+        Fr. Roque Ruaño Building at the University of Santo Tomas Engineering campus, the system was trained 
+        on a custom dataset designed to handle real-world navigation scenarios with both formal and informal 
+        user queries. Due to hardware constraints, GPT-2 was selected as the base model, with multiple training 
+        methods evaluated including General Purpose Trainer and ORPO. TigerNav enables users to navigate through 
+        indoor spaces using natural language, supporting both voice and text modalities for flexible interaction. 
+        We conclude with performance benchmarks, user satisfaction analysis, and recommendations for improvements 
+        using more advanced LLMs to handle highly unstructured queries. The source code can be accessed via 
+        <a href="https://github.com/tigernav-ust/tigernav" target="_blank" rel="noopener">https://github.com/tigernav-ust/tigernav</a>.
       </p>
     </section>
-
     <!-- Demo Video -->
     <section id="demo" class="card">
       <h2>🎥 Demo Video</h2>
       <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="note">
-        Replace the YouTube video ID (<code>dQw4w9WgXcQ</code>) in the HTML with your actual demo video ID.
+        <iframe src="https://www.youtube.com/embed/kq6zKs2pO14" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </section>
-
     <!-- System Overview -->
     <section id="overview" class="card">
       <h2>🗺️ System Overview</h2>
@@ -206,11 +198,7 @@
       <div style="text-align: center;">
         <img src="architecture.png" alt="TigerNav System Architecture" style="max-width: 100%;">
       </div>
-      <div class="note">
-        Add your system architecture diagram as <code>architecture.png</code> in the same directory as this HTML file.
-      </div>
     </section>
-
     <!-- User Interface -->
     <section class="card">
       <h2>💻 User Interface</h2>
@@ -227,12 +215,7 @@
       <div style="text-align: center;">
         <img src="gui-chat.png" alt="Chat Interface Screenshot">
       </div>
-      
-      <div class="note">
-        Add your interface screenshots as <code>gui-voice.png</code> and <code>gui-chat.png</code> in the same directory.
-      </div>
     </section>
-
     <!-- Results -->
     <section id="results" class="card">
       <h2>📊 Results</h2>
@@ -346,7 +329,6 @@
         (91.2%) and reliability (92%).
       </p>
     </section>
-
     <!-- BibTeX -->
     <section id="bibtex" class="card">
       <h2>📝 BibTeX</h2>
@@ -367,7 +349,6 @@
   note      = {Accepted}
 }</div>
     </section>
-
     <!-- Acknowledgments -->
     <section class="card">
       <h2>🙏 Acknowledgments</h2>
@@ -377,7 +358,6 @@
         this work possible.
       </p>
     </section>
-
     <footer>
       © <span id="yr"></span> TigerNav Team • University of Santo Tomas, Manila, Philippines
       <br>
