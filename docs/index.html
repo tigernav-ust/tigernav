@@ -66,7 +66,7 @@
     
     section.card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 32px; margin: 26px 0; box-shadow: var(--shadow); }
     section.card h2 { margin: 0 0 16px; font-size: clamp(22px, 2.8vw, 32px); color: #d97706; font-weight: 700; }
-    section.card h3 { margin: 24px 0 12px; font-size: clamp(18px, 2vw, 22px); color: var(--ink); }
+    section.card h3 { margin: 20px 0 8px; font-size: clamp(18px, 2vw, 22px); color: var(--ink); }
     section.card p { margin: 12px 0; color: var(--muted); line-height: 1.7; }
     
     .video-container {
@@ -88,6 +88,11 @@
     }
     
     img { max-width: 100%; height: auto; border-radius: var(--radius-lg); margin: 20px 0; border: 1px solid var(--border); }
+    
+    /* Compact styling for UI section */
+    .ui-section img { margin: 10px 0 24px 0; }
+    .ui-section h3 { margin: 16px 0 6px; }
+    .ui-section p { margin: 6px 0 8px; }
     
     .codebox { 
       background: #faf7f4; 
@@ -200,7 +205,7 @@
       </div>
     </section>
     <!-- User Interface -->
-    <section class="card">
+    <section class="card ui-section">
       <h2>💻 User Interface</h2>
       <p>TigerNav offers two interaction modes for flexible navigation assistance:</p>
       
