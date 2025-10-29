@@ -10,15 +10,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b1020;         /* deep navy */
-      --panel: #101631;      /* card background */
-      --ink: #e7ebff;        /* primary text */
-      --muted: #aab3d1;      /* secondary text */
-      --brand: #6aa1ff;      /* accent */
-      --brand-2: #39d0c3;    /* secondary accent */
-      --border: #24305a;     /* subtle borders */
-      --chip: #151d3f;       /* tag bg */
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --bg: #ffffff;
+      --panel: #fefaf6;
+      --ink: #2a1810;
+      --muted: #6b5846;
+      --brand: #e89b4d;
+      --brand-2: #f5b55f;
+      --border: #e8ddd0;
+      --chip: #fff4e6;
+      --shadow: 0 2px 12px rgba(232,155,77,.15);
       --radius-xl: 18px;
       --radius-lg: 14px;
       --radius-md: 10px;
@@ -30,87 +30,117 @@
       margin: 0;
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
       color: var(--ink);
-      background: radial-gradient(1200px 600px at 50% -200px, #16204d 0%, #0b1020 60%) fixed,
-                  radial-gradient(900px 500px at 10% 120%, #0f2340 0%, #0b1020 50%) fixed,
-                  var(--bg);
+      background: var(--bg);
       line-height: 1.55;
       letter-spacing: .02em;
     }
     a { color: var(--brand); text-decoration: none; }
     a:hover { text-decoration: underline; }
-
-    /* Layout */
+    
     .wrap { max-width: var(--maxw); margin: 0 auto; padding: 24px; }
-
-    /* Header / Hero */
+    
     header {
       position: sticky; top: 0; z-index: 40; backdrop-filter: blur(10px);
-      background: linear-gradient( to bottom, rgba(11,16,32,.85), rgba(11,16,32,.35) 60%, rgba(11,16,32,0) );
-      border-bottom: 1px solid rgba(255,255,255,.04);
+      background: linear-gradient(to bottom, rgba(255,255,255,.95), rgba(255,255,255,.8) 60%, rgba(255,255,255,0));
+      border-bottom: 1px solid var(--border);
     }
     .nav { display:flex; align-items:center; justify-content:space-between; gap:16px; padding: 10px 24px; }
     .logo { font-weight: 800; letter-spacing:.03em; }
-    .nav a.btn-sm { padding:8px 14px; border-radius: 999px; border:1px solid var(--border); background: #0c1431; color: var(--ink); text-decoration:none; }
-    .nav a.btn-sm:hover { border-color: #3a4a86; }
-
+    .nav a.btn-sm { padding:8px 14px; border-radius: 999px; border:1px solid var(--border); background: var(--panel); color: var(--ink); text-decoration:none; }
+    .nav a.btn-sm:hover { border-color: var(--brand); background: var(--chip); }
+    
     .hero { padding: 56px 0 28px; }
     .pretitle { display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius: 999px; background: var(--chip); color: var(--muted); font-weight:600; font-size: 12px; letter-spacing:.08em; text-transform:uppercase; }
     h1 { margin: 14px 0 12px; font-size: clamp(28px, 4.2vw, 56px); line-height:1.05; letter-spacing:.01em; }
-    .subtitle { color: var(--muted); font-size: clamp(16px, 2vw, 20px); }
-
+    .subtitle { color: var(--muted); font-size: clamp(16px, 2vw, 20px); margin-top: 12px; }
     .authors { margin: 18px 0 8px; display:flex; flex-wrap:wrap; gap:8px 14px; }
     .authors a, .authors span { color: var(--ink); }
     .affil { color: var(--muted); font-size: 15px; }
-
     .cta-row { margin: 20px 0 0; display:flex; flex-wrap:wrap; gap:12px; }
     .btn { display:inline-flex; align-items:center; gap:10px; font-weight:700; padding: 12px 18px; border-radius: 12px; border: 1px solid var(--border); text-decoration:none; transition: transform .05s ease; box-shadow: var(--shadow); }
-    .btn:hover { transform: translateY(-1px); }
-    .btn.primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); color:#00121a; border-color: transparent; }
-    .btn.ghost { background: #0c1431; color: var(--ink); }
+    .btn:hover { transform: translateY(-1px); text-decoration: none; }
+    .btn.primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); color:#ffffff; border-color: transparent; }
+    .btn.ghost { background: var(--panel); color: var(--ink); border-color: var(--border); }
+    .btn.ghost:hover { background: var(--chip); border-color: var(--brand); }
     .btn.disabled { opacity:.55; cursor:not-allowed; pointer-events:none; }
-
-    /* Sections */
-    section.card { background: rgba(15,22,53,.6); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 24px; margin: 26px 0; box-shadow: var(--shadow); }
-    section.card h2 { margin: 0 0 12px; font-size: clamp(20px, 2.8vw, 30px); }
-    section.card p { margin: 10px 0; color: var(--muted); }
-
-    /* Gallery placeholder */
-    .grid {
-      display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    
+    section.card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 32px; margin: 26px 0; box-shadow: var(--shadow); }
+    section.card h2 { margin: 0 0 16px; font-size: clamp(22px, 2.8vw, 32px); color: #d97706; font-weight: 700; }
+    section.card h3 { margin: 24px 0 12px; font-size: clamp(18px, 2vw, 22px); color: var(--ink); }
+    section.card p { margin: 12px 0; color: var(--muted); line-height: 1.7; }
+    
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      margin: 20px 0;
+      border: 1px solid var(--border);
     }
-    .tile { background: #0e1430; border:1px solid var(--border); border-radius: var(--radius-md); aspect-ratio: 4/3; display:flex; align-items:center; justify-content:center; color:#6f7cb3; font-size:14px; }
-
-    /* Table */
-    table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: var(--radius-md); }
-    th, td { padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 14px; }
-    th { text-align: left; color: var(--muted); font-weight: 700; background: #0d1637; }
-    tr:hover td { background: rgba(255,255,255,.02); }
-
-    /* Bibtex */
-    .codebox { background: #0b132b; border-radius: var(--radius-md); border:1px solid var(--border); padding: 14px; font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 13px; color: #d7e0ff; overflow: auto; }
-
-    footer { color: #8291c4; font-size: 13px; padding: 40px 0; text-align:center; }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    
+    img { max-width: 100%; height: auto; border-radius: var(--radius-lg); margin: 20px 0; border: 1px solid var(--border); }
+    
+    .codebox { 
+      background: #faf7f4; 
+      border-radius: var(--radius-md); 
+      border:1px solid var(--border); 
+      padding: 20px; 
+      font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; 
+      font-size: 13px; 
+      color: #3a2515; 
+      overflow: auto;
+      white-space: pre;
+      line-height: 1.6;
+    }
+    
+    .note {
+      background: rgba(232, 155, 77, 0.08);
+      border-left: 3px solid var(--brand);
+      padding: 12px 16px;
+      margin: 16px 0;
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      color: var(--muted);
+    }
+    
+    footer { color: var(--muted); font-size: 13px; padding: 40px 0; text-align:center; border-top: 1px solid var(--border); margin-top: 60px; }
+    
+    @media (max-width: 768px) {
+      .nav { flex-direction: column; align-items: flex-start; }
+      .hero { padding: 32px 0 20px; }
+      section.card { padding: 24px; }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="nav wrap">
-      <div class="logo">TigerNav</div>
-      <nav style="display:flex; gap:10px">
+      <div class="logo">🐯 TigerNav</div>
+      <nav style="display:flex; gap:10px; flex-wrap: wrap;">
+        <a class="btn-sm" href="#abstract">Abstract</a>
+        <a class="btn-sm" href="#demo">Demo</a>
         <a class="btn-sm" href="#overview">Overview</a>
-        <a class="btn-sm" href="#resources">Resources</a>
+        <a class="btn-sm" href="#results">Results</a>
         <a class="btn-sm" href="#bibtex">BibTeX</a>
       </nav>
     </div>
   </header>
-
+  
   <main class="wrap">
     <!-- Hero -->
     <div class="hero">
-      <span class="pretitle">Accepted in <a href="https://ieeemy.org/tencon2025/" target="_blank" rel="noopener">TENCON 2025</a></span>
+      <span class="pretitle">Accepted in <a href="https://ieeemy.org/tencon2025/" target="_blank" rel="noopener">IEEE TENCON 2025</a></span>
       <h1>TigerNav: Development of a Virtual Assistant using an Autoregressive Model for Indoor Navigation</h1>
-      <p class="subtitle">A forward-looking system grounded in sound engineering practice, designed to guide users through indoor spaces using an autoregressive reasoning loop.</p>
-
+      <p class="subtitle">A dialogue-based indoor navigation system using a Large Language Model to process diverse user inputs and provide accurate directional guidance through voice and text interaction.</p>
       <div class="authors">
         <span>Ralph Alexander N. San Juan</span>
         <span>•</span>
@@ -122,78 +152,239 @@
         <span>•</span>
         <span>Carl Kristien P. Sumo</span>
         <span>•</span>
-        <a href="https://www.ust.edu.ph/profile/pangaliman-ma-madecheen-s/" target="_blank" rel="noopener">Ma. Madecheen S. Pangaliman</a>
+        <span>Ma. Madecheen S. Pangaliman</span>
       </div>
       <div class="affil">Department of Electronics Engineering, Faculty of Engineering, University of Santo Tomas</div>
-
-      <div class="cta-row" id="resources">
-        <a class="btn primary" href="#" title="Paper coming soon" aria-disabled="true" role="button">📄 Paper (coming soon)</a>
-        <a class="btn ghost" href="https://github.com/tigernav-ust/tigernav.git" target="_blank" rel="noopener">💻 Code</a>
+      <div class="cta-row">
+        <a class="btn primary disabled" href="#" title="Paper coming soon" aria-disabled="true" role="button">📄 Paper (Coming Soon)</a>
+        <a class="btn ghost" href="#bibtex">📋 BibTeX</a>
       </div>
     </div>
 
-    <!-- Overview section -->
-    <section id="overview" class="card">
-      <h2>Overview</h2>
+    <!-- Abstract -->
+    <section id="abstract" class="card">
+      <h2>📄 Abstract</h2>
       <p>
-        <strong>TigerNav</strong> is a virtual assistant for <em>indoor navigation</em> built on an autoregressive decision model. High-level
-        user goals are translated into a sequence of subgoals and low-level actions, enabling purposeful movement through
-        corridors, rooms, and multi-floor facilities while remaining simple to deploy. The project places equal value on the
-        fundamentals—clear sensing, robust planning, and reliable execution—while embracing modern learning techniques.
+        Indoor navigation systems play a crucial role in guiding users through complex environments such as airports, 
+        shopping malls, hospitals, and university campuses. However, existing dialogue-based navigation systems face 
+        limitations in accurately processing diverse user inputs, particularly unconventional and unstructured queries. 
+        To address this, the researchers developed <strong>TigerNav</strong>, a virtual assistant using a Large Language 
+        Model (LLM) to facilitate dialogue-driven navigation for the Fr. Roque Ruaño Building at the University of Santo 
+        Tomas Engineering campus.
       </p>
-      <div class="grid" aria-label="image grid">
-        <div class="tile">Add screenshots or figures here</div>
-        <div class="tile">Navigation traces</div>
-        <div class="tile">Model loop</div>
-        <div class="tile">Demo frames</div>
+      <p>
+        The system integrates Whisper speech-to-text and Coqui text-to-speech technologies with a fine-tuned GPT-2 model, 
+        trained on a dataset of <strong>200,000 entries</strong> (70% training, 30% testing). Due to hardware constraints 
+        (4GB VRAM GPUs), GPT-2 was selected as the base model. Among the training methods tested, the General Purpose 
+        Trainer achieved optimal performance with a <strong>BERTScore of 0.89</strong>, <strong>METEOR score of 0.84</strong>, 
+        and <strong>perplexity of 2.82</strong>. User satisfaction surveys validated the system's practicality with an 
+        average rating of <strong>87.44%</strong>, though improvements in handling highly unstructured queries could be 
+        achieved using more advanced LLMs.
+      </p>
+    </section>
+
+    <!-- Demo Video -->
+    <section id="demo" class="card">
+      <h2>🎥 Demo Video</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="note">
+        Replace the YouTube video ID (<code>dQw4w9WgXcQ</code>) in the HTML with your actual demo video ID.
       </div>
     </section>
 
-    <!-- (Optional) Results-style table placeholder, mirroring the reference vibe -->
+    <!-- System Overview -->
+    <section id="overview" class="card">
+      <h2>🗺️ System Overview</h2>
+      <p>
+        TigerNav employs a three-component pipeline: users speak navigation queries through <strong>Whisper STT</strong>, 
+        the fine-tuned <strong>GPT-2 model</strong> processes the request and generates directional instructions, 
+        and <strong>Coqui TTS</strong> delivers the response through natural speech output.
+      </p>
+      <div style="text-align: center;">
+        <img src="architecture.png" alt="TigerNav System Architecture" style="max-width: 100%;">
+      </div>
+      <div class="note">
+        Add your system architecture diagram as <code>architecture.png</code> in the same directory as this HTML file.
+      </div>
+    </section>
+
+    <!-- User Interface -->
     <section class="card">
-      <h2>Sample Metrics (placeholder)</h2>
-      <p>Structure prepared for reporting Human/Agent performance across task difficulty levels.</p>
-      <div style="overflow:auto">
-        <table>
+      <h2>💻 User Interface</h2>
+      <p>TigerNav offers two interaction modes for flexible navigation assistance:</p>
+      
+      <h3>🎤 Voice-Enabled Virtual Assistant</h3>
+      <p>Users can speak naturally to TigerNav and receive voice-guided navigation instructions, enabling hands-free operation ideal for walking through buildings.</p>
+      <div style="text-align: center;">
+        <img src="gui-voice.png" alt="Voice Interface Screenshot">
+      </div>
+      
+      <h3>💬 Text-Based Chatbot</h3>
+      <p>For quieter environments or user preference, TigerNav also provides a text-based chat interface with the same navigation capabilities.</p>
+      <div style="text-align: center;">
+        <img src="gui-chat.png" alt="Chat Interface Screenshot">
+      </div>
+      
+      <div class="note">
+        Add your interface screenshots as <code>gui-voice.png</code> and <code>gui-chat.png</code> in the same directory.
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section id="results" class="card">
+      <h2>📊 Results</h2>
+      <p>
+        The evaluation compared different training methods across five epochs, measuring performance through 
+        multiple metrics. The General Purpose Trainer consistently outperformed ORPO across all metrics.
+      </p>
+      
+      <h3>📈 Performance Metrics Comparison</h3>
+      <div style="overflow-x: auto; margin: 20px 0;">
+        <table style="width: 100%; min-width: 600px;">
           <thead>
             <tr>
-              <th>Difficulty</th>
-              <th>HAT ↓</th>
-              <th>HCR% ↑</th>
-              <th>AAT ↓</th>
-              <th>ACR% ↑</th>
+              <th rowspan="2" style="vertical-align: middle; text-align: center;">Metric</th>
+              <th colspan="5" style="text-align: center; border-bottom: 1px solid var(--border);">General Purpose Trainer</th>
+              <th colspan="5" style="text-align: center; border-bottom: 1px solid var(--border);">ORPO</th>
+            </tr>
+            <tr>
+              <th style="text-align: center;">E1</th>
+              <th style="text-align: center;">E2</th>
+              <th style="text-align: center;">E3</th>
+              <th style="text-align: center;">E4</th>
+              <th style="text-align: center;">E5</th>
+              <th style="text-align: center;">E1</th>
+              <th style="text-align: center;">E2</th>
+              <th style="text-align: center;">E3</th>
+              <th style="text-align: center;">E4</th>
+              <th style="text-align: center;">E5</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Easy-L1</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
-            <tr><td>Easy-L2</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
-            <tr><td>Average-L1</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
-            <tr><td>Difficult-L1</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+            <tr>
+              <td style="text-align: center;"><strong>BLEU</strong></td>
+              <td style="background: rgba(232, 155, 77, 0.15); text-align: center;">0.616</td>
+              <td style="text-align: center;">0.617</td>
+              <td style="text-align: center;">0.608</td>
+              <td style="text-align: center;">0.614</td>
+              <td style="text-align: center;">0.594</td>
+              <td style="text-align: center;">0.576</td>
+              <td style="text-align: center;">0.569</td>
+              <td style="text-align: center;">0.562</td>
+              <td style="text-align: center;">0.570</td>
+              <td style="text-align: center;">0.578</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;"><strong>METEOR</strong></td>
+              <td style="background: rgba(232, 155, 77, 0.15); text-align: center;">0.846</td>
+              <td style="text-align: center;">0.848</td>
+              <td style="text-align: center;">0.841</td>
+              <td style="text-align: center;">0.842</td>
+              <td style="text-align: center;">0.836</td>
+              <td style="text-align: center;">0.807</td>
+              <td style="text-align: center;">0.801</td>
+              <td style="text-align: center;">0.796</td>
+              <td style="text-align: center;">0.800</td>
+              <td style="text-align: center;">0.811</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;"><strong>ROUGE-L</strong></td>
+              <td style="background: rgba(232, 155, 77, 0.15); text-align: center;">0.784</td>
+              <td style="text-align: center;">0.780</td>
+              <td style="text-align: center;">0.774</td>
+              <td style="text-align: center;">0.774</td>
+              <td style="text-align: center;">0.765</td>
+              <td style="text-align: center;">0.751</td>
+              <td style="text-align: center;">0.742</td>
+              <td style="text-align: center;">0.732</td>
+              <td style="text-align: center;">0.736</td>
+              <td style="text-align: center;">0.748</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;"><strong>BERTScore</strong></td>
+              <td style="background: rgba(232, 155, 77, 0.15); text-align: center;">0.895</td>
+              <td style="text-align: center;">0.896</td>
+              <td style="text-align: center;">0.894</td>
+              <td style="text-align: center;">0.892</td>
+              <td style="text-align: center;">0.888</td>
+              <td style="text-align: center;">0.878</td>
+              <td style="text-align: center;">0.873</td>
+              <td style="text-align: center;">0.870</td>
+              <td style="text-align: center;">0.872</td>
+              <td style="text-align: center;">0.877</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;"><strong>Perplexity</strong></td>
+              <td style="background: rgba(232, 155, 77, 0.15); text-align: center;">2.82</td>
+              <td style="text-align: center;">3.43</td>
+              <td style="text-align: center;">3.99</td>
+              <td style="text-align: center;">4.84</td>
+              <td style="text-align: center;">5.44</td>
+              <td style="text-align: center;">5.63</td>
+              <td style="text-align: center;">8.86</td>
+              <td style="text-align: center;">11.42</td>
+              <td style="text-align: center;">12.67</td>
+              <td style="text-align: center;">32.20</td>
+            </tr>
           </tbody>
         </table>
       </div>
+      
+      <p>
+        The General Purpose Trainer achieved the best performance in <strong>Epoch 1</strong>, with a BERTScore of 
+        <strong>0.89</strong>, METEOR score of <strong>0.84</strong>, and an average perplexity of <strong>2.82</strong>. 
+        The system demonstrated strong performance in accuracy, reliability, and user expectations, with response time 
+        identified as the primary area for future optimization.
+      </p>
+      
+      <p>
+        A user satisfaction survey validated the system's practicality, achieving an overall rating of <strong>87.44%</strong>. 
+        The evaluation demonstrated strong performance across all metrics, with particularly high ratings in accuracy 
+        (91.2%) and reliability (92%).
+      </p>
     </section>
 
     <!-- BibTeX -->
     <section id="bibtex" class="card">
-      <h2>BibTeX</h2>
-      <div class="codebox" id="bib">
-@inproceedings{sanjuan2025tigernav,\n  title     = {TigerNav: Development of a Virtual Assistant using an Autoregressive Model for Indoor Navigation},\n  author    = {San Juan, Ralph Alexander N. and Baetiong, Ernest John Q. and Bantayao, Saranggani J., Jr. and Mangali, Marc Justin M. and Sumo, Carl Kristien P. and Pangaliman, Ma. Madecheen S.},\n  booktitle = {IEEE Region 10 Conference (TENCON)},\n  year      = {2025},\n  address   = {Kuala Lumpur, Malaysia},\n  note      = {Accepted. See: https://ieeemy.org/tencon2025/}\n}
-      </div>
+      <h2>📝 BibTeX</h2>
+      <p>If you find TigerNav useful in your research, please consider citing:</p>
+      <div class="codebox">@inproceedings{sanjuan2025tigernav,
+  title     = {TigerNav: Development of a Virtual Assistant using an 
+               Autoregressive Model for Indoor Navigation},
+  author    = {San Juan, Ralph Alexander N. and 
+               Baetiong, Ernest John Q. and 
+               Bantayao, Saranggani J., Jr. and 
+               Mangali, Marc Justin M. and 
+               Sumo, Carl Kristien P. and 
+               Pangaliman, Ma. Madecheen S.},
+  booktitle = {2025 IEEE Region 10 Conference (TENCON)},
+  year      = {2025},
+  month     = {October},
+  address   = {Kota Kinabalu, Sabah, Malaysia},
+  note      = {Accepted}
+}</div>
     </section>
 
+    <!-- Acknowledgments -->
     <section class="card">
-      <h2>Contact</h2>
-      <p>For questions or collaboration, feel free to reach out to the authors via their institutional emails.</p>
+      <h2>🙏 Acknowledgments</h2>
+      <p>
+        This research was conducted at the Department of Electronics Engineering, Faculty of Engineering, 
+        University of Santo Tomas. We thank our institution for providing the resources and support that made 
+        this work possible.
+      </p>
     </section>
 
     <footer>
-      © <span id="yr"></span> TigerNav • University of Santo Tomas — Built with a clean, single-file HTML layout inspired by classic academic project pages.
+      © <span id="yr"></span> TigerNav Team • University of Santo Tomas, Manila, Philippines
+      <br>
+      <span style="font-size: 11px; opacity: .7;">Accepted at IEEE TENCON 2025 • October 27-30, 2025 • Kota Kinabalu, Sabah, Malaysia</span>
     </footer>
   </main>
-
+  
   <script>
-    // update year
     document.getElementById('yr').textContent = new Date().getFullYear();
   </script>
 </body>
